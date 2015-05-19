@@ -96,8 +96,8 @@
 		31ABF9A91B0BBB95008CFDE7 /* DRDateHelpersExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				31ABF9AA1B0BBB95008CFDE7 /* Supporting Files */,
 				9DA8A700018D60256008845A /* DRDateHelpersTests.m */,
+				31ABF9AA1B0BBB95008CFDE7 /* Supporting Files */,
 			);
 			path = DRDateHelpersExampleTests;
 			sourceTree = "<group>";
@@ -150,8 +150,8 @@
 		31ABF9CC1B0BBE17008CFDE7 /* DRDateHelpers */ = {
 			isa = PBXGroup;
 			children = (
-				9DA8A7CFA0168334C33DB4B7 /* NSDate+DRDateHelpers.m */,
 				9DA8AF27C11DF78D24027B88 /* NSDate+DRDateHelpers.h */,
+				9DA8A7CFA0168334C33DB4B7 /* NSDate+DRDateHelpers.m */,
 			);
 			path = DRDateHelpers;
 			sourceTree = "<group>";
