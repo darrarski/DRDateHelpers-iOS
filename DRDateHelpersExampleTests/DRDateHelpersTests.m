@@ -75,6 +75,14 @@ static NSString *const PreviousMonth = @"PreviousMonth";
             DateFormat:       @"dd.MM.yyyy HH:mm:ss ZZZ",
             Date:             @"31.03.2015 18:00:00 +0000",
             PreviousMonth:    @"28.02.2015 18:00:00 +0000"
+        },
+        @{
+            TimeZone:         [NSTimeZone timeZoneForSecondsFromGMT:60 * 60 * 2],
+            Locale:           [[NSLocale alloc] initWithLocaleIdentifier:@"pl_PL"],
+            DateFormat:       @"dd.MM.yyyy HH:mm:ss ZZZ",
+            Date:             @"19.05.2015 17:00:00 +0000",
+            BeginningOfDay:   @"19.05.2015 00:00:00 +0200",
+            EndOfDay:         @"19.05.2015 23:59:59 +0200"
         }
     ];
 }
