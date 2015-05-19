@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		31ABF9AD1B0BBB95008CFDE7 /* DRDateHelpersExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ABF9AC1B0BBB95008CFDE7 /* DRDateHelpersExampleTests.m */; };
 		31ABF9C51B0BBC18008CFDE7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ABF9B81B0BBC18008CFDE7 /* AppDelegate.m */; };
 		31ABF9C61B0BBC18008CFDE7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31ABF9BA1B0BBC18008CFDE7 /* Images.xcassets */; };
 		31ABF9C81B0BBC18008CFDE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ABF9BD1B0BBC18008CFDE7 /* main.m */; };
@@ -31,7 +30,6 @@
 		31ABF98D1B0BBB95008CFDE7 /* DRDateHelpersExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DRDateHelpersExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31ABF9A61B0BBB95008CFDE7 /* DRDateHelpersExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DRDateHelpersExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31ABF9AB1B0BBB95008CFDE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		31ABF9AC1B0BBB95008CFDE7 /* DRDateHelpersExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DRDateHelpersExampleTests.m; sourceTree = "<group>"; };
 		31ABF9B71B0BBC18008CFDE7 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		31ABF9B81B0BBC18008CFDE7 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		31ABF9BA1B0BBC18008CFDE7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 		31ABF9A91B0BBB95008CFDE7 /* DRDateHelpersExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				31ABF9AC1B0BBB95008CFDE7 /* DRDateHelpersExampleTests.m */,
 				31ABF9AA1B0BBB95008CFDE7 /* Supporting Files */,
 			);
 			path = DRDateHelpersExampleTests;
@@ -267,7 +264,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31ABF9AD1B0BBB95008CFDE7 /* DRDateHelpersExampleTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
