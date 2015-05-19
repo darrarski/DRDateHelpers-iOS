@@ -11,26 +11,26 @@
             buildForRunning = "YES"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "31ABF98C1B0BBB95008CFDE7"
-               BuildableName = "DRDateHelpersExample.app"
-               BlueprintName = "DRDateHelpersExample"
-               ReferencedContainer = "container:DRDateHelpersExample.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "31ABF9A51B0BBB95008CFDE7"
                BuildableName = "DRDateHelpersExampleTests.xctest"
                BlueprintName = "DRDateHelpersExampleTests"
+               ReferencedContainer = "container:DRDateHelpersExample.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "31ABF98C1B0BBB95008CFDE7"
+               BuildableName = "DRDateHelpersExample.app"
+               BlueprintName = "DRDateHelpersExample"
                ReferencedContainer = "container:DRDateHelpersExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
