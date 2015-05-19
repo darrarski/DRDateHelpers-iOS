@@ -14,6 +14,7 @@
 		31ABF9C91B0BBC18008CFDE7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31ABF9BF1B0BBC18008CFDE7 /* LaunchScreen.xib */; };
 		31ABF9CA1B0BBC18008CFDE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31ABF9C11B0BBC18008CFDE7 /* Main.storyboard */; };
 		31ABF9CB1B0BBC18008CFDE7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ABF9C41B0BBC18008CFDE7 /* ViewController.m */; };
+		9DA8AAF53A95BFA321030857 /* NSDate+DRDateHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A7CFA0168334C33DB4B7 /* NSDate+DRDateHelpers.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		31ABF9C21B0BBC18008CFDE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		31ABF9C31B0BBC18008CFDE7 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		31ABF9C41B0BBC18008CFDE7 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9DA8A7CFA0168334C33DB4B7 /* NSDate+DRDateHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DRDateHelpers.m"; sourceTree = "<group>"; };
+		9DA8AF27C11DF78D24027B88 /* NSDate+DRDateHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DRDateHelpers.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,7 @@
 		31ABF9841B0BBB95008CFDE7 = {
 			isa = PBXGroup;
 			children = (
+				31ABF9CC1B0BBE17008CFDE7 /* DRDateHelpers */,
 				31ABF98F1B0BBB95008CFDE7 /* DRDateHelpersExample */,
 				31ABF9A91B0BBB95008CFDE7 /* DRDateHelpersExampleTests */,
 				31ABF98E1B0BBB95008CFDE7 /* Products */,
@@ -141,6 +145,15 @@
 				31ABF9C41B0BBC18008CFDE7 /* ViewController.m */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		31ABF9CC1B0BBE17008CFDE7 /* DRDateHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				9DA8A7CFA0168334C33DB4B7 /* NSDate+DRDateHelpers.m */,
+				9DA8AF27C11DF78D24027B88 /* NSDate+DRDateHelpers.h */,
+			);
+			path = DRDateHelpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +259,7 @@
 				31ABF9C51B0BBC18008CFDE7 /* AppDelegate.m in Sources */,
 				31ABF9C81B0BBC18008CFDE7 /* main.m in Sources */,
 				31ABF9CB1B0BBC18008CFDE7 /* ViewController.m in Sources */,
+				9DA8AAF53A95BFA321030857 /* NSDate+DRDateHelpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
