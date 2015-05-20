@@ -14,6 +14,13 @@
     return [calendar dateByAddingUnit:NSCalendarUnitDay value:daysCount toDate:self options:0];
 }
 
+- (NSDate *)DRDateHelpers_dateByAddingWeeks:(NSInteger)weeksCount timeZone:(NSTimeZone *)timeZone
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    calendar.timeZone = timeZone;
+    return [calendar dateByAddingUnit:NSCalendarUnitWeekOfYear value:weeksCount toDate:self options:0];
+}
+
 - (NSDate *)DRDateHelpers_dateByAddingMonths:(NSInteger)monthsCount timeZone:(NSTimeZone *)timeZone
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -33,15 +40,7 @@
 
 - (NSDate *)DRDateHelpers_endOfDayWithTimeZone:(NSTimeZone *)timeZone
 {
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    calendar.timeZone = timeZone;
-    NSDateComponents *components = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay
-                                               fromDate:self];
-    components.timeZone = timeZone;
-    components.hour = 23;
-    components.minute = 59;
-    components.second = 59;
-    return [calendar dateFromComponents:components];
+    return [[self DRDateHelpers_dateByAddingDays:1 timeZone:timeZone] DRDateHelpers_beginningOfDayWithTimeZone:timeZone];
 }
 
 - (NSDate *)DRDateHelpers_beginningOfWeekWithTimeZone:(NSTimeZone *)timeZone locale:(NSLocale *)locale
@@ -58,8 +57,7 @@
 
 - (NSDate *)DRDateHelpers_endOfWeekWithTimeZone:(NSTimeZone *)timeZone locale:(NSLocale *)locale
 {
-    NSDate *beginningOfWeek = [self DRDateHelpers_beginningOfWeekWithTimeZone:timeZone locale:locale];
-    return [beginningOfWeek dateByAddingTimeInterval:60 * 60 * 24 * 7 - 1];
+    return [[self DRDateHelpers_dateByAddingWeeks:1 timeZone:timeZone] DRDateHelpers_beginningOfWeekWithTimeZone:timeZone locale:locale];
 }
 
 - (NSDate *)DRDateHelpers_beginningOfMonthWithTimeZone:(NSTimeZone *)timeZone
@@ -74,16 +72,7 @@
 
 - (NSDate *)DRDateHelpers_endOfMonthWithTimeZone:(NSTimeZone *)timeZone
 {
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    calendar.timeZone = timeZone;
-    NSDateComponents *components = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth
-                                               fromDate:self];
-    components.timeZone = timeZone;
-    components.day = [calendar rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:self].length;
-    components.hour = 23;
-    components.minute = 59;
-    components.second = 59;
-    return [calendar dateFromComponents:components];
+    return [[self DRDateHelpers_dateByAddingMonths:1 timeZone:timeZone] DRDateHelpers_beginningOfMonthWithTimeZone:timeZone];
 }
 
 @end

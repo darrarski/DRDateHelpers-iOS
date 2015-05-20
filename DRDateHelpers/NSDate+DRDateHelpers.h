@@ -8,6 +8,7 @@
 @interface NSDate (DRDateHelpers)
 
 - (NSDate *)DRDateHelpers_dateByAddingDays:(NSInteger)daysCount timeZone:(NSTimeZone *)timeZone;
+- (NSDate *)DRDateHelpers_dateByAddingWeeks:(NSInteger)weeksCount timeZone:(NSTimeZone *)timeZone;
 - (NSDate *)DRDateHelpers_dateByAddingMonths:(NSInteger)monthsCount timeZone:(NSTimeZone *)timeZone;
 - (NSDate *)DRDateHelpers_beginningOfDayWithTimeZone:(NSTimeZone *)timeZone;
 - (NSDate *)DRDateHelpers_endOfDayWithTimeZone:(NSTimeZone *)timeZone;
