@@ -19,6 +19,8 @@ static NSString *const BeginningOfMonth = @"BeginningOfMonth";
 static NSString *const EndOfMonth = @"EndOfMonth";
 static NSString *const NextDay = @"NextDay";
 static NSString *const PreviousDay = @"PreviousDay";
+static NSString *const NextWeek = @"NextWeek";
+static NSString *const PreviousWeek = @"PreviousWeek";
 static NSString *const NextMonth = @"NextMonth";
 static NSString *const PreviousMonth = @"PreviousMonth";
 
@@ -41,13 +43,15 @@ static NSString *const PreviousMonth = @"PreviousMonth";
             DateFormat:       @"dd.MM.yyyy HH:mm:ss ZZZ",
             Date:             @"19.05.2015 17:00:00 +0000",
             BeginningOfDay:   @"19.05.2015 00:00:00 +0000",
-            EndOfDay :        @"19.05.2015 23:59:59 +0000",
+            EndOfDay :        @"20.05.2015 00:00:00 +0000",
             BeginningOfWeek:  @"18.05.2015 00:00:00 +0000",
-            EndOfWeek:        @"24.05.2015 23:59:59 +0000",
+            EndOfWeek:        @"25.05.2015 00:00:00 +0000",
             BeginningOfMonth: @"01.05.2015 00:00:00 +0000",
-            EndOfMonth:       @"31.05.2015 23:59:59 +0000",
+            EndOfMonth:       @"01.06.2015 00:00:00 +0000",
             NextDay:          @"20.05.2015 17:00:00 +0000",
             PreviousDay:      @"18.05.2015 17:00:00 +0000",
+            NextWeek:         @"26.05.2015 17:00:00 +0000",
+            PreviousWeek:     @"12.05.2015 17:00:00 +0000",
             NextMonth:        @"19.06.2015 17:00:00 +0000",
             PreviousMonth:    @"19.04.2015 17:00:00 +0000"
         },
@@ -57,7 +61,7 @@ static NSString *const PreviousMonth = @"PreviousMonth";
             DateFormat:       @"dd.MM.yyyy HH:mm:ss ZZZ",
             Date:             @"19.05.2015 17:00:00 +0000",
             BeginningOfWeek:  @"17.05.2015 00:00:00 +0000",
-            EndOfWeek:        @"23.05.2015 23:59:59 +0000"
+            EndOfWeek:        @"24.05.2015 00:00:00 +0000"
         },
         @{
             TimeZone:         [NSTimeZone timeZoneForSecondsFromGMT:0],
@@ -65,9 +69,9 @@ static NSString *const PreviousMonth = @"PreviousMonth";
             DateFormat:       @"dd.MM.yyyy HH:mm:ss ZZZ",
             Date:             @"26.02.2015 18:00:00 +0000",
             BeginningOfWeek:  @"23.02.2015 00:00:00 +0000",
-            EndOfWeek:        @"01.03.2015 23:59:59 +0000",
+            EndOfWeek:        @"02.03.2015 00:00:00 +0000",
             BeginningOfMonth: @"01.02.2015 00:00:00 +0000",
-            EndOfMonth:       @"28.02.2015 23:59:59 +0000"
+            EndOfMonth:       @"01.03.2015 00:00:00 +0000"
         },
         @{
             TimeZone:         [NSTimeZone timeZoneForSecondsFromGMT:0],
@@ -82,7 +86,22 @@ static NSString *const PreviousMonth = @"PreviousMonth";
             DateFormat:       @"dd.MM.yyyy HH:mm:ss ZZZ",
             Date:             @"19.05.2015 17:00:00 +0000",
             BeginningOfDay:   @"19.05.2015 00:00:00 +0200",
-            EndOfDay:         @"19.05.2015 23:59:59 +0200"
+            EndOfDay:         @"20.05.2015 00:00:00 +0200"
+        },
+        @{
+            TimeZone:         [NSTimeZone timeZoneForSecondsFromGMT:0],
+            Locale:           [[NSLocale alloc] initWithLocaleIdentifier:@"pl_PL"],
+            DateFormat:       @"dd.MM.yyyy HH:mm:ss ZZZ",
+            Date:             @"01.01.2015 12:00:00 +0000",
+            PreviousWeek:     @"25.12.2014 12:00:00 +0000",
+            BeginningOfWeek:  @"29.12.2014 00:00:00 +0000"
+        },
+        @{
+            TimeZone:         [NSTimeZone timeZoneForSecondsFromGMT:0],
+            Locale:           [[NSLocale alloc] initWithLocaleIdentifier:@"pl_PL"],
+            DateFormat:       @"dd.MM.yyyy HH:mm:ss ZZZ",
+            Date:             @"29.12.2014 12:00:00 +0000",
+            EndOfWeek:        @"05.01.2015 00:00:00 +0000"
         }
     ];
 }
@@ -178,6 +197,28 @@ static NSString *const PreviousMonth = @"PreviousMonth";
         NSDateFormatter *dateFormatter = [self dateFormatterForTestDict:dict];
         NSDate *result = [[dateFormatter dateFromString:dict[Date]] DRDateHelpers_dateByAddingDays:-1 timeZone:dict[TimeZone]];
         NSDate *expectation = [dateFormatter dateFromString:dict[PreviousDay]];
+        XCTAssertEqualObjects(result, expectation);
+    }];
+}
+
+- (void)testNextWeek
+{
+    [self.data enumerateObjectsUsingBlock:^(NSDictionary *dict, NSUInteger idx, BOOL *stop) {
+        if (dict[NextWeek] == nil) return;
+        NSDateFormatter *dateFormatter = [self dateFormatterForTestDict:dict];
+        NSDate *result = [[dateFormatter dateFromString:dict[Date]] DRDateHelpers_dateByAddingWeeks:1 timeZone:dict[TimeZone]];
+        NSDate *expectation = [dateFormatter dateFromString:dict[NextWeek]];
+        XCTAssertEqualObjects(result, expectation);
+    }];
+}
+
+- (void)testPreviousWeek
+{
+    [self.data enumerateObjectsUsingBlock:^(NSDictionary *dict, NSUInteger idx, BOOL *stop) {
+        if (dict[PreviousWeek] == nil) return;
+        NSDateFormatter *dateFormatter = [self dateFormatterForTestDict:dict];
+        NSDate *result = [[dateFormatter dateFromString:dict[Date]] DRDateHelpers_dateByAddingWeeks:-1 timeZone:dict[TimeZone]];
+        NSDate *expectation = [dateFormatter dateFromString:dict[PreviousWeek]];
         XCTAssertEqualObjects(result, expectation);
     }];
 }
