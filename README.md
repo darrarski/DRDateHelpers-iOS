@@ -29,19 +29,21 @@ Date manipulation helpers for iOS.
 
 You can integrate `DRDateHelpers` with your project using Cocoapods. To do so, you will need to add one of the following lines to your Podfile:
 
-For most recent or development version:
+For stable release (recommended):
 
 ```ruby
-pod 'DRDateHelpers', :git => 'https://github.com/darrarski/DRDateHelpers-iOS.git'
+pod 'DRSwipeMenu', '~> 1.0.1'
 ```
 
-For specific version:
+Which creates dependency for version `>= 1.0.1` and `< 1.1`
+
+For most recent or exact development version (not recommended on production):
 
 ```ruby
-pod 'DRDateHelpers', :git => 'https://github.com/darrarski/DRDateHelpers-iOS.git', :tag => 'VERSION_TAG'
+pod 'DRSwipeMenu', :git => 'https://github.com/darrarski/DRSwipeMenu-iOS.git', :tag => 'VERSION_TAG'
 ```
 
-Where `VERSION_TAG` you should put tag name for given version (ex. "v1.0.0"). It is recommended to set version explicity instead of using most recent version, as backward compatibility is not warranted.
+Where `VERSION_TAG` you should put tag name for given version (ex. "v1.0.1"). It is recommended to set version explicity instead of using most recent version, as backward compatibility is not warranted.
 
 You can also download zip archive of given release from [releases page](https://github.com/darrarski/DRDateHelpers-iOS/releases).
 
