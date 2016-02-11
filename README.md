@@ -27,7 +27,7 @@ Date manipulation helpers for iOS.
 
 ## Instalation
 
-You can integrate `DRDateHelpers` with your project using Cocoapods. To do so, you will need to add one of the following lines to your Podfile:
+You can integrate `DRDateHelpers` with your project using CocoaPods. To do so, you will need to add one of the following lines to your Podfile:
 
 For stable release (recommended):
 
